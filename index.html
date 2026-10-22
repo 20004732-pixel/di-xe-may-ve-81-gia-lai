@@ -70,25 +70,18 @@
           <div class="actions"><button class="secondary" type="reset">Xóa nội dung</button><button class="primary" type="submit">Gửi đăng ký</button></div>
         </form>
       </section>
-      <section class="list-section" aria-labelledby="list-title">
-        <div class="list-head"><div><p class="eyebrow">Danh sách đăng ký</p><h2 id="list-title">Thành viên trong đoàn</h2></div><span class="count" id="member-count">0 thành viên</span></div>
-        <div class="table-wrap"><table class="table"><thead><tr><th>#</th><th>Ngày về</th><th>Họ tên</th><th>Điện thoại</th><th>Tên Zalo</th><th>Đã đi cùng đoàn</th><th>Người đi cùng</th><th>Biển số xe</th><th>Bằng lái</th><th>Cờ chân gương</th><th>Ghi chú</th></tr></thead><tbody id="members"><tr><td class="empty" colspan="11">Chưa có thành viên đăng ký. Bạn có thể là người đầu tiên!</td></tr></tbody></table></div>
-        <p class="footnote">Thông tin đăng ký được lưu trong trình duyệt trên thiết bị này.</p>
-      </section>
     </div>
   </main>
-  <div class="toast" id="toast" role="status" aria-live="polite">Đã thêm đăng ký vào danh sách!</div>
+  <div class="toast" id="toast" role="status" aria-live="polite">Đã ghi nhận đăng ký trên thiết bị này.</div>
   <script>
     const STORAGE_KEY='gia-lai-rider-signups-v1';let departureDay='26';
     const welcome=document.getElementById('welcome'),registration=document.getElementById('registration');
     const escapeHtml=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
     function readMembers(){try{return JSON.parse(localStorage.getItem(STORAGE_KEY)||'[]')}catch{return []}}
-    function showForm(day){departureDay=day;document.getElementById('chosen-date').textContent='Ngày '+day;welcome.style.display='none';registration.classList.add('visible');renderMembers();window.scrollTo({top:0,behavior:'smooth'})}
-    function renderMembers(){const rows=readMembers();document.getElementById('member-count').textContent=rows.length+' thành viên';const body=document.getElementById('members');if(!rows.length){body.innerHTML='<tr><td class="empty" colspan="11">Chưa có thành viên đăng ký. Bạn có thể là người đầu tiên!</td></tr>';return}body.innerHTML=rows.map((r,i)=>`<tr><td>${i+1}</td><td><span class="badge">${escapeHtml(r.day)}</span></td><td><strong>${escapeHtml(r.name)}</strong></td><td>${escapeHtml(r.phone)}</td><td>${escapeHtml(r.zalo||'—')}</td><td>${escapeHtml(r.returning)}</td><td>${escapeHtml(r.companion||r.ride||'—')}</td><td>${escapeHtml(r.plate||'—')}</td><td>${escapeHtml(r.license)}</td><td>${escapeHtml(r.flag)}</td><td>${escapeHtml(r.notes||'—')}</td></tr>`).join('')}
+    function showForm(day){departureDay=day;document.getElementById('chosen-date').textContent='Ngày '+day;welcome.style.display='none';registration.classList.add('visible');window.scrollTo({top:0,behavior:'smooth'})}
     document.querySelectorAll('.date').forEach(btn=>btn.addEventListener('click',()=>showForm(btn.dataset.date)));
     document.getElementById('change-date').addEventListener('click',()=>{registration.classList.remove('visible');welcome.style.display='grid';window.scrollTo({top:0,behavior:'smooth'})});
-    document.getElementById('signup-form').addEventListener('submit',event=>{event.preventDefault();const form=new FormData(event.currentTarget);const record={day:'Ngày '+departureDay,name:form.get('name').trim(),phone:form.get('phone').trim(),zalo:form.get('zalo').trim(),plate:form.get('plate').trim(),returning:form.get('returning'),license:form.get('license'),ride:form.get('ride'),companion:form.get('companion').trim(),flag:form.get('flag'),notes:form.get('notes').trim()};const rows=readMembers();rows.push(record);try{localStorage.setItem(STORAGE_KEY,JSON.stringify(rows));renderMembers();event.currentTarget.reset();const toast=document.getElementById('toast');toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2400);document.getElementById('list-title').scrollIntoView({behavior:'smooth',block:'center'})}catch{alert('Trình duyệt không thể lưu dữ liệu. Vui lòng kiểm tra cài đặt bộ nhớ.')}});
-    renderMembers();
+    document.getElementById('signup-form').addEventListener('submit',event=>{event.preventDefault();const form=new FormData(event.currentTarget);const record={day:'Ngày '+departureDay,name:form.get('name').trim(),phone:form.get('phone').trim(),zalo:form.get('zalo').trim(),plate:form.get('plate').trim(),returning:form.get('returning'),license:form.get('license'),ride:form.get('ride'),companion:form.get('companion').trim(),flag:form.get('flag'),notes:form.get('notes').trim()};const rows=readMembers();rows.push(record);try{localStorage.setItem(STORAGE_KEY,JSON.stringify(rows));event.currentTarget.reset();const toast=document.getElementById('toast');toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2400)}catch{alert('Trình duyệt không thể lưu dữ liệu. Vui lòng kiểm tra cài đặt bộ nhớ.')}});
   </script>
 </body>
 </html>
