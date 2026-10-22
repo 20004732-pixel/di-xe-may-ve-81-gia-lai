@@ -74,14 +74,14 @@
   </main>
   <div class="toast" id="toast" role="status" aria-live="polite">Đã ghi nhận đăng ký trên thiết bị này.</div>
   <script>
-    const STORAGE_KEY='gia-lai-rider-signups-v1';let departureDay='26';
+    const STORAGE_KEY='gia-lai-rider-signups-v1',DEVICE_KEY='gia-lai-device-registered-v1';let departureDay='26';
     const welcome=document.getElementById('welcome'),registration=document.getElementById('registration');
     const escapeHtml=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
     function readMembers(){try{return JSON.parse(localStorage.getItem(STORAGE_KEY)||'[]')}catch{return []}}
     function showForm(day){departureDay=day;document.getElementById('chosen-date').textContent='Ngày '+day;welcome.style.display='none';registration.classList.add('visible');window.scrollTo({top:0,behavior:'smooth'})}
     document.querySelectorAll('.date').forEach(btn=>btn.addEventListener('click',()=>showForm(btn.dataset.date)));
     document.getElementById('change-date').addEventListener('click',()=>{registration.classList.remove('visible');welcome.style.display='grid';window.scrollTo({top:0,behavior:'smooth'})});
-    document.getElementById('signup-form').addEventListener('submit',event=>{event.preventDefault();const form=new FormData(event.currentTarget);const record={day:'Ngày '+departureDay,name:form.get('name').trim(),phone:form.get('phone').trim(),zalo:form.get('zalo').trim(),plate:form.get('plate').trim(),returning:form.get('returning'),license:form.get('license'),ride:form.get('ride'),companion:form.get('companion').trim(),flag:form.get('flag'),notes:form.get('notes').trim()};const rows=readMembers();rows.push(record);try{localStorage.setItem(STORAGE_KEY,JSON.stringify(rows));event.currentTarget.reset();const toast=document.getElementById('toast');toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2400)}catch{alert('Trình duyệt không thể lưu dữ liệu. Vui lòng kiểm tra cài đặt bộ nhớ.')}});
+    document.getElementById('signup-form').addEventListener('submit',event=>{event.preventDefault();if(localStorage.getItem(DEVICE_KEY)){alert('Thiết bị này đã đăng ký rồi. Vui lòng liên hệ admin nếu cần chỉnh sửa.');return}const form=new FormData(event.currentTarget);const record={day:'Ngày '+departureDay,name:form.get('name').trim(),phone:form.get('phone').trim(),zalo:form.get('zalo').trim(),plate:form.get('plate').trim(),returning:form.get('returning'),license:form.get('license'),ride:form.get('ride'),companion:form.get('companion').trim(),flag:form.get('flag'),notes:form.get('notes').trim()};const rows=readMembers();rows.push(record);try{localStorage.setItem(STORAGE_KEY,JSON.stringify(rows));localStorage.setItem(DEVICE_KEY,'1');event.currentTarget.reset();const toast=document.getElementById('toast');toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2400)}catch{alert('Trình duyệt không thể lưu dữ liệu. Vui lòng kiểm tra cài đặt bộ nhớ.')}});
   </script>
 </body>
 </html>
