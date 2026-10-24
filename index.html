@@ -11,7 +11,7 @@
     .hero{position:relative;isolation:isolate;min-height:100svh;display:grid;place-items:center;overflow:hidden;padding:34px 18px;background:linear-gradient(130deg,#fff3d8d9 4%,#fff6e5a6 48%,#fff0dbbf),url('doan-xe-tet.png') center 54%/cover fixed}
     .hero-video{position:absolute;z-index:-2;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 58%;filter:saturate(.92) brightness(.86)}.hero:before{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(130deg,#fff3d8bd 4%,#fff6e58c 48%,#fff0dbab)}
     .hero:after{content:"";position:absolute;inset:auto 0 0;height:120px;background:linear-gradient(transparent,#fff8e9);z-index:-1}
-    .welcome{position:relative;width:min(830px,100%);padding:clamp(26px,5vw,54px);text-align:center;border:1px solid #e8c75e;border-radius:32px;background:#fffaf0ed;box-shadow:var(--shadow);backdrop-filter:blur(9px)}
+    .welcome{position:relative;width:min(830px,100%);padding:clamp(26px,5vw,54px);text-align:center;border:1px solid #e8c75e;border-radius:32px;background:#fffaf0ed;box-shadow:var(--shadow);backdrop-filter:blur(9px)}.welcome[hidden]{display:none!important}#start-registration{margin-top:4px}
     .logo{display:block;width:min(310px,82%);max-height:170px;object-fit:contain;margin:0 auto 16px;filter:drop-shadow(0 8px 10px #4b1b1822)}
     .ribbon{display:inline-flex;align-items:center;gap:8px;margin:0 auto 15px;padding:7px 15px;border-radius:99px;background:var(--red);color:#ffe38e;font-size:12px;font-weight:850;letter-spacing:.12em;text-transform:uppercase}
     h1,h2,p{margin-top:0}h1{margin-bottom:12px;color:var(--red);font-size:clamp(34px,7vw,60px);line-height:1.06;letter-spacing:-.045em;text-wrap:balance}.intro{max-width:590px;margin:0 auto 27px;color:var(--muted);font-size:17px}
@@ -34,11 +34,17 @@
   <section class="hero" id="welcome" aria-labelledby="welcome-title">
     <video class="hero-video" autoplay muted loop playsinline preload="none" poster="doan-xe-tet.png" aria-hidden="true"><source src="https://videos.pexels.com/video-files/15773410/15773410-uhd_3840_2160_30fps.mp4" type="video/mp4"></video>
     <span class="float f1" aria-hidden="true">🌼</span><span class="float f2" aria-hidden="true">🏍️</span><span class="float f3" aria-hidden="true">🧧</span><span class="float f4" aria-hidden="true">✨</span>
-    <div class="welcome">
+    <div class="welcome" id="greeting-screen">
       <img class="logo" src="logo-group-81-gia-lai.png" alt="Logo Group đi xe máy về 81 Gia Lai">
       <p class="ribbon">🌸 Xuân đoàn viên · 81 Gia Lai 🌸</p>
-      <h1 id="welcome-title">Tết này mình về nhà nhé!</h1>
-      <p class="intro">Chào bạn đến với trang đăng ký cùng Group đi xe máy về 81 Gia Lai. Cùng nhau lên đường, trở về bên gia đình và đón một mùa Tết đoàn viên ấm áp. Bạn dự định về ngày nào?</p>
+      <h1 id="welcome-title">Xin chào! Tết này mình cùng về nhà nhé!</h1>
+      <p class="intro">Chào mừng bạn đến với trang đăng ký cùng Group đi xe máy về 81 Gia Lai. Cùng nhau lên đường, trở về bên gia đình và đón một mùa Tết đoàn viên ấm áp.</p>
+      <button class="btn btn-submit" id="start-registration" type="button">Bắt đầu đăng ký <span aria-hidden="true">→</span></button>
+    </div>
+    <div class="welcome" id="date-screen" hidden>
+      <p class="ribbon">📅 Lịch khởi hành · 81 Gia Lai</p>
+      <h1>Bạn dự định về ngày nào?</h1>
+      <p class="intro">Chọn ngày khởi hành phù hợp, sau đó điền thông tin để ban tổ chức chuẩn bị cho chuyến đi nhé.</p>
       <p class="date-label">Chọn ngày khởi hành</p>
       <div class="dates" role="group" aria-label="Chọn ngày khởi hành">
         <button class="date" type="button" data-date="26"><strong>26</strong><span>Ngày 26</span></button>
@@ -79,7 +85,7 @@
     <article class="gallery-card"><img loading="lazy" src="doan-xe-tet.png" alt="Đoàn xe máy cùng nhau lên đường về Gia Lai"><div><h3>Cùng nhau du xuân</h3><p>Một hành trình vui vẻ, an toàn và đầy kỷ niệm.</p></div></article>
     <article class="gallery-card"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Tet_holiday_in_Vietnam.jpg/960px-Tet_holiday_in_Vietnam.jpg" alt="Gia đình quây quần chuẩn bị món bánh Tết truyền thống"><div><h3>Tết cổ truyền đoàn viên</h3><p>Điều quý nhất là được trở về bên những người thân yêu.</p></div></article>
   </div><p class="photo-credit">Ảnh chợ hoa: <a href="https://commons.wikimedia.org/wiki/File:Ch%E1%BB%A3_hoa_t%E1%BA%BFt.jpg" target="_blank" rel="noopener">Nguyen Dung Tien / Wikimedia Commons (CC BY-SA 2.0)</a> · Ảnh Tết cổ truyền: <a href="https://commons.wikimedia.org/wiki/File:Tet_holiday_in_Vietnam.jpg" target="_blank" rel="noopener">This is Thảo / Wikimedia Commons (CC BY-SA 4.0)</a> · Video: Pexels</p></div></section>  <section class="thanks" id="thanks" role="dialog" aria-modal="true" aria-labelledby="thanks-title" aria-describedby="thanks-text" hidden>
-    <div class="thanks-card"><span class="thanks-icon" aria-hidden="true">🏮</span><p class="thanks-label" id="thanks-label">Đang gửi đăng ký...</p><h2 id="thanks-title">Chúc mừng <span id="thanks-name">bạn</span> đã đăng ký thành công!</h2><p class="thanks-text" id="thanks-text">Cảm ơn bạn đã đăng ký. Hẹn gặp bạn vào ngày đoàn khởi hành nhé!</p><p class="greeting">Chúc bạn và gia đình năm mới bình an, vạn dặm bình an và Tết đoàn viên ấm áp! 🧧</p></div>
+    <div class="thanks-card"><span class="thanks-icon" aria-hidden="true">🏮</span><p class="thanks-label" id="thanks-label">Đang gửi đăng ký...</p><h2 id="thanks-title">Đang gửi đăng ký...</h2><p class="thanks-text" id="thanks-text">Cảm ơn bạn đã đăng ký. Hẹn gặp bạn vào ngày đoàn khởi hành nhé!</p><p class="greeting" id="thanks-greeting" hidden>Chúc bạn và gia đình năm mới bình an, vạn dặm bình an và Tết đoàn viên ấm áp! 🧧</p><button class="btn btn-clear" id="thanks-close" type="button" hidden>Đóng thông báo</button></div>
   </section>
   <p class="sr-status" id="live-status" role="status" aria-live="polite"></p>
 
@@ -89,6 +95,8 @@
     let departureDay='26';
     const welcome=document.getElementById('welcome');
     const registration=document.getElementById('registration');
+    const greetingScreen=document.getElementById('greeting-screen');
+    const dateScreen=document.getElementById('date-screen');
     const form=document.getElementById('signup-form');
     const thanks=document.getElementById('thanks');
     const submitButton=document.getElementById('submit-button');
@@ -109,9 +117,12 @@
       document.getElementById('name').focus({preventScroll:true});
     }
     function showThanks(name,status='Đang gửi đăng ký...',message='Cảm ơn bạn đã đăng ký. Hẹn gặp bạn vào ngày đoàn khởi hành nhé!'){
-      document.getElementById('thanks-name').textContent=name||'bạn';
-      document.getElementById('thanks-label').textContent=status;
+      const success=status==='Đăng ký thành công';
+      document.getElementById('thanks-title').textContent=success?'Chúc mừng '+(name||'bạn')+' đã đăng ký thành công!':status==='Đang xác nhận đăng ký'?'Chưa xác nhận được đăng ký':'Đang gửi đăng ký...';
+      document.getElementById('thanks-label').textContent=success?'Đăng ký thành công':status;
       document.getElementById('thanks-text').textContent=message;
+      document.getElementById('thanks-greeting').hidden=!success;
+      document.getElementById('thanks-close').hidden=success||status==='Đang gửi đăng ký...';
       thanks.hidden=false;
       thanks.classList.add('visible');
     }
@@ -133,10 +144,14 @@
         deviceId:makeSubmissionId()
       };
     }
+    document.getElementById('start-registration').addEventListener('click',()=>{greetingScreen.hidden=true;dateScreen.hidden=false;document.querySelector('#date-screen h1').focus?.({preventScroll:true});});
+    document.getElementById('thanks-close').addEventListener('click',hideThanks);
     document.querySelectorAll('.date').forEach(button=>button.addEventListener('click',()=>openForm(button.dataset.date)));
     document.getElementById('change-day').addEventListener('click',()=>{
       registration.classList.remove('visible');
       welcome.hidden=false;
+      greetingScreen.hidden=true;
+      dateScreen.hidden=false;
       window.scrollTo({top:0,behavior:'smooth'});
     });
 
