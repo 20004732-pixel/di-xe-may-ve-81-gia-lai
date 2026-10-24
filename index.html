@@ -3,91 +3,195 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#8c241b">
+  <meta name="theme-color" content="#8e241d">
   <title>Đăng ký đi xe máy về 81 Gia Lai</title>
   <style>
-    :root{--pine:#751e18;--green:#a83224;--lime:#f5d77c;--cream:#fff6e5;--ink:#3d241e;--muted:#80675c;--line:#efd9b7;--white:#fffdf8;--shadow:0 18px 55px #76261b20}
-    *{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}
-    .hero{position:relative;isolation:isolate;overflow:hidden;min-height:100svh;display:grid;place-items:center;padding:32px 18px;background:linear-gradient(145deg,#fff4dca8,#fbe4cf91),url('doan-xe-tet.png') center 55%/cover fixed}
-    .welcome{position:relative;z-index:2;width:min(820px,100%);text-align:center;padding:clamp(26px,5vw,54px);border:1px solid #f0d6a9;border-radius:30px;background:#fffaf0ed;box-shadow:0 24px 70px #4c1d1740;backdrop-filter:blur(8px)}
-    .float-icon{position:absolute;z-index:1;display:grid;place-items:center;width:54px;height:54px;border:1px solid #ffffffa8;border-radius:19px;background:#fffaf0c9;box-shadow:0 8px 22px #5f251b26;font-size:27px;animation:floaty 4.5s ease-in-out infinite;pointer-events:none}
-    .float-one{top:10%;left:8%;animation-delay:-.8s}.float-two{top:19%;right:9%;animation-delay:-2.1s}.float-three{bottom:13%;left:12%;animation-delay:-1.4s}.float-four{bottom:10%;right:11%;animation-delay:-3s}
-    @keyframes floaty{0%,100%{transform:translateY(0) rotate(-7deg)}50%{transform:translateY(-14px) rotate(8deg)}}
-    .mark{width:64px;height:64px;margin:0 auto 18px;border-radius:21px;display:grid;place-items:center;background:var(--pine);color:var(--lime);font-size:29px}
-    .main-logo{display:block;width:min(280px,82%);height:auto;margin:0 auto 20px;border:2px solid #e1ae3e;border-radius:18px;box-shadow:0 10px 30px #76261b30}
-    .eyebrow{margin:0 0 8px;color:var(--green);font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}h1,h2,p{margin-top:0}h1{font-size:clamp(34px,7vw,58px);line-height:1.08;letter-spacing:-.04em;margin-bottom:14px;color:var(--pine)}.intro{max-width:560px;margin:0 auto 28px;color:var(--muted);font-size:17px}
-    .date-title{font-size:14px;font-weight:750;margin-bottom:12px}.dates{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:460px;margin:0 auto}.date{padding:15px 8px;border:1px solid var(--line);border-radius:16px;background:white;color:var(--pine);font-weight:750;transition:.18s}.date:hover,.date.selected{border-color:var(--green);background:#edf6e9;transform:translateY(-2px);box-shadow:0 6px 18px #28654818}.date strong{display:block;font-size:23px}.date span{font-size:12px;color:var(--muted);font-weight:600}
-    .main{display:none;padding:38px 18px 70px}.main.visible{display:block}.wrap{max-width:940px;margin:auto}.topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:22px}.brand{display:flex;align-items:center;gap:12px;color:var(--pine);font-weight:850}.brand .mark{width:44px;height:44px;border-radius:14px;margin:0;font-size:21px}.back{border:0;background:transparent;color:var(--green);font-weight:700;padding:10px}.panel{border:1px solid var(--line);border-radius:24px;background:white;box-shadow:var(--shadow);overflow:hidden}.panel-head{padding:28px 30px 21px;background:linear-gradient(100deg,#f2f7e9,#fff)}.panel-head h2{margin-bottom:4px;color:var(--pine);font-size:26px}.panel-head p{margin:0;color:var(--muted)}form{padding:26px 30px 30px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:19px 16px}.field.full{grid-column:1/-1}label,.legend{display:block;margin-bottom:7px;font-size:13px;font-weight:750;color:#34473b}.req{color:#a63e31}.control{width:100%;padding:12px 13px;border:1px solid #d7e0d6;border-radius:12px;background:#fff;color:var(--ink);outline:none;transition:.15s}.control:focus{border-color:var(--green);box-shadow:0 0 0 3px #2865481c}textarea.control{resize:vertical;min-height:92px}.hint{font-size:12px;color:var(--muted);margin:6px 0 0}.radio-row{display:flex;gap:10px;flex-wrap:wrap}.choice{display:flex;align-items:center;gap:8px;padding:10px 13px;border:1px solid var(--line);border-radius:11px;color:var(--ink);font-size:14px}.choice input{accent-color:var(--green)}.actions{display:flex;justify-content:flex-end;gap:10px;margin-top:24px}.primary,.secondary{border:0;border-radius:12px;padding:12px 19px;font-weight:750}.primary{background:var(--pine);color:white}.primary:hover{background:var(--green)}.secondary{background:#eff3ed;color:var(--pine)}.list-section{margin-top:30px}.list-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-bottom:12px}.list-head h2{font-size:21px;color:var(--pine);margin:0}.count{color:var(--muted);font-size:13px}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:16px;background:white}.table{width:100%;border-collapse:collapse;min-width:740px;text-align:left}.table th,.table td{padding:12px 14px;border-bottom:1px solid #edf0eb;font-size:13px;vertical-align:top}.table th{background:#f4f7f1;color:#405345;font-weight:750;white-space:nowrap}.table tr:last-child td{border-bottom:0}.empty{padding:23px!important;text-align:center;color:var(--muted)}.badge{display:inline-block;padding:3px 8px;border-radius:99px;background:#eff5e9;color:var(--green);font-size:12px;font-weight:700;white-space:nowrap}.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,20px);padding:11px 16px;border-radius:12px;background:var(--pine);color:white;opacity:0;pointer-events:none;transition:.2s}.toast.show{opacity:1;transform:translate(-50%,0)}.footnote{text-align:center;color:var(--muted);font-size:12px;margin:16px 0}
-    @media(max-width:650px){.grid{grid-template-columns:1fr}.field.full{grid-column:auto}form{padding:22px 18px}.panel-head{padding:23px 18px}.topbar{align-items:flex-start}.dates{gap:8px}.date{padding:12px 5px}.date strong{font-size:20px}.list-head{align-items:flex-start;flex-direction:column}}
-    @media(max-width:650px){.hero{background-attachment:scroll;background-position:center}.float-icon{width:42px;height:42px;border-radius:15px;font-size:21px}.float-one{top:3%;left:3%}.float-two{top:5%;right:3%}.float-three{bottom:3%;left:3%}.float-four{bottom:3%;right:3%}}
-    .thanks-dialog{position:fixed;inset:0;z-index:1000;display:none;place-items:center;padding:14px;background:#34100bc9;backdrop-filter:blur(5px)}.thanks-dialog.open{display:grid}.thanks-content{position:relative;overflow:hidden;width:min(480px,100%);padding:38px 30px;border:1px solid #edce79;border-radius:28px;color:#49221c;background:#fffaf0;box-shadow:0 25px 90px #35100d70;text-align:center}.thanks-content:before{content:"✨　🧧　✨";position:absolute;top:12px;left:0;right:0;color:#be3126;font-size:20px;animation:floaty 3s ease-in-out infinite}.thanks-icon{display:grid;place-items:center;width:76px;height:76px;margin:22px auto 14px;border-radius:24px;background:linear-gradient(145deg,#fff0c9,#ffe1a2);font-size:42px;animation:floaty 3s ease-in-out infinite}.thanks-content h2{margin:0 0 10px;color:#92251d;font-size:clamp(27px,6vw,36px)}.thanks-content p{color:#72544a}.thanks-greeting{padding:13px;border-radius:15px;background:#fff1d7;color:#92251d!important;font-weight:700}
-@media(prefers-reduced-motion:reduce){.float-icon{animation:none}}
-    .welcome{border:1px solid #edce79;background:rgba(255,250,240,.94);box-shadow:0 26px 80px #501a174f}.welcome:before{content:"";position:absolute;inset:0 18% auto;height:5px;border-radius:0 0 99px 99px;background:linear-gradient(90deg,#be2d22,#f5cc56,#be2d22)}
-    .main-logo{width:min(330px,84%);padding:4px;border:2px solid #edc653;border-radius:20px;background:#080808;box-shadow:0 12px 30px #4b1b1845}
-    .main-logo{padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;filter:drop-shadow(0 8px 9px #4b1b182d)}
-    .eyebrow{display:table;margin:0 auto 12px;padding:6px 13px;border-radius:99px;background:#8e241d;color:#ffdf76;letter-spacing:.13em;box-shadow:0 4px 12px #8e241d26}
-    h1{color:#8b201b;text-shadow:0 2px 0 #f8dda0}.intro{color:#6e5147}.date-title{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#8e241d}
-    .date{padding:17px 8px;border:1px solid #e9c55e;background:linear-gradient(145deg,#fffefa,#fff1d1);box-shadow:0 7px 16px #7b261414}.date strong{font-size:29px;color:#a52a20}.date:hover,.date.selected{border-color:#ae2b20;background:linear-gradient(145deg,#fff0cb,#ffe5aa);box-shadow:0 10px 22px #8b241d26}
-    .main.visible{background:linear-gradient(#fff7e9dc,#fff7e9dc),url('doan-xe-tet.png') center/cover fixed}.panel{border-color:#e6c86f;box-shadow:0 22px 60px #5e201b27}.panel-head{background:linear-gradient(110deg,#fff0d5,#fff9eb);border-bottom:1px solid #f0dfbf}.brand-logo{width:58px;height:auto;border:0;border-radius:0;background:transparent}.primary{background:linear-gradient(135deg,#971f19,#bf392a);box-shadow:0 7px 15px #90251e2b}.primary:hover{background:#751e18}.secondary{background:#fff0d5;color:#751e18}.table th{background:#fff0d5;color:#74352c}.badge{background:#fff0d5;color:#9b2c23}
-    @media(max-width:650px){.main.visible{background-attachment:scroll}.welcome{padding:25px 18px}.main-logo{width:min(285px,86%)}.date{padding:14px 5px}.date strong{font-size:25px}}
-  </style>
+    :root{--red:#8e241d;--red2:#b52b24;--gold:#f3cf70;--cream:#fff8e9;--ink:#35221d;--muted:#765d52;--line:#ead8b5;--paper:#fffdf8;--shadow:0 22px 64px #43130f35}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;background:#fff8e9}button,input,select,textarea{font:inherit}button{cursor:pointer}
+    .hero{position:relative;isolation:isolate;min-height:100svh;display:grid;place-items:center;overflow:hidden;padding:34px 18px;background:linear-gradient(130deg,#fff3d8d9 4%,#fff6e5a6 48%,#fff0dbbf),url('doan-xe-tet.png') center 54%/cover fixed}
+    .hero-video{position:absolute;z-index:-2;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 58%;filter:saturate(.92) brightness(.86)}.hero:before{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(130deg,#fff3d8bd 4%,#fff6e58c 48%,#fff0dbab)}
+    .hero:after{content:"";position:absolute;inset:auto 0 0;height:120px;background:linear-gradient(transparent,#fff8e9);z-index:-1}
+    .welcome{position:relative;width:min(830px,100%);padding:clamp(26px,5vw,54px);text-align:center;border:1px solid #e8c75e;border-radius:32px;background:#fffaf0ed;box-shadow:var(--shadow);backdrop-filter:blur(9px)}
+    .logo{display:block;width:min(310px,82%);max-height:170px;object-fit:contain;margin:0 auto 16px;filter:drop-shadow(0 8px 10px #4b1b1822)}
+    .ribbon{display:inline-flex;align-items:center;gap:8px;margin:0 auto 15px;padding:7px 15px;border-radius:99px;background:var(--red);color:#ffe38e;font-size:12px;font-weight:850;letter-spacing:.12em;text-transform:uppercase}
+    h1,h2,p{margin-top:0}h1{margin-bottom:12px;color:var(--red);font-size:clamp(34px,7vw,60px);line-height:1.06;letter-spacing:-.045em;text-wrap:balance}.intro{max-width:590px;margin:0 auto 27px;color:var(--muted);font-size:17px}
+    .date-label{margin:0 0 12px;color:var(--red);font-size:13px;font-weight:850;letter-spacing:.11em;text-transform:uppercase}.dates{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:500px;margin:0 auto}.date{padding:15px 9px;border:1px solid #e4c55f;border-radius:17px;background:linear-gradient(145deg,#fffefa,#fff0cf);color:var(--red);box-shadow:0 7px 18px #79231a12;transition:transform .18s,box-shadow .18s,border-color .18s}.date:hover,.date:focus-visible{transform:translateY(-3px);border-color:var(--red2);box-shadow:0 12px 24px #79231a20;outline:none}.date.selected{background:#ffe6ad;border-color:var(--red2)}.date strong{display:block;font-size:30px;line-height:1.1}.date span{display:block;margin-top:4px;color:var(--muted);font-size:12px;font-weight:700}.small-note{margin:14px 0 0;color:var(--muted);font-size:12px}
+    .float{position:absolute;z-index:0;display:grid;place-items:center;width:54px;height:54px;border:1px solid #fff;border-radius:19px;background:#fffaf0da;box-shadow:0 8px 22px #5f251b22;font-size:27px;animation:bob 4.5s ease-in-out infinite;pointer-events:none}.f1{top:8%;left:7%}.f2{top:17%;right:8%;animation-delay:-1.2s}.f3{bottom:13%;left:10%;animation-delay:-2s}.f4{bottom:9%;right:9%;animation-delay:-.7s}@keyframes bob{0%,100%{transform:translateY(0) rotate(-7deg)}50%{transform:translateY(-13px) rotate(7deg)}}
+    .registration{display:none;min-height:100vh;padding:35px 18px 70px;background:linear-gradient(#fff8e9e8,#fff8e9e8),url('doan-xe-tet.png') center/cover fixed}.registration.visible{display:block}.wrap{max-width:940px;margin:0 auto}.bar{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:18px}.brand{display:flex;align-items:center;gap:10px;color:var(--red);font-weight:850}.brand img{width:58px;height:48px;object-fit:contain}.change-day{border:0;border-radius:12px;padding:10px 13px;background:#fff0d5;color:var(--red);font-weight:750}
+    .panel{overflow:hidden;border:1px solid #e7cb71;border-radius:25px;background:var(--paper);box-shadow:var(--shadow)}.panel-head{padding:27px 30px 22px;background:linear-gradient(105deg,#fff0d5,#fffaf0);border-bottom:1px solid #efdfbf}.panel-head h2{margin-bottom:5px;color:var(--red);font-size:26px}.panel-head p{margin:0;color:var(--muted)}.date-pill{display:inline-flex;margin-left:5px;padding:3px 10px;border-radius:99px;background:#ffeac1;color:var(--red);font-weight:850}
+    form{padding:26px 30px 30px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 16px}.field.full{grid-column:1/-1}label,.legend{display:block;margin-bottom:7px;color:#4b3b31;font-size:13px;font-weight:800}.required{color:var(--red2)}.control{width:100%;min-height:46px;padding:11px 13px;border:1px solid #dfd4c3;border-radius:12px;background:#fff;color:var(--ink);outline:none;transition:border-color .15s,box-shadow .15s}.control:focus{border-color:#bb4538;box-shadow:0 0 0 3px #b52b2418}.control::placeholder{color:#a39284}textarea.control{min-height:94px;resize:vertical}.choices{display:flex;gap:9px;flex-wrap:wrap}.choice{display:inline-flex;align-items:center;gap:8px;min-height:42px;padding:9px 12px;border:1px solid var(--line);border-radius:11px;background:white;color:var(--ink);font-size:14px;font-weight:650}.choice input{width:16px;height:16px;accent-color:var(--red2)}.actions{display:flex;justify-content:flex-end;gap:10px;margin-top:24px}.btn{min-height:46px;border:0;border-radius:13px;padding:11px 18px;font-weight:850}.btn-clear{background:#fff0d5;color:var(--red)}.btn-submit{background:linear-gradient(135deg,#8e241d,#c23b2d);color:white;box-shadow:0 7px 16px #8e241d2b}.btn-submit:disabled{opacity:.65;cursor:wait}.help{margin:14px 0 0;color:var(--muted);font-size:12px}
+    .thanks{position:fixed;inset:0;z-index:1000;display:none;place-items:center;padding:16px;background:#32100dc9;backdrop-filter:blur(5px)}.thanks.visible{display:grid}.thanks-card{position:relative;width:min(500px,100%);overflow:hidden;padding:38px 30px 30px;border:1px solid #ebce78;border-radius:28px;background:#fffaf0;box-shadow:0 25px 90px #21080570;text-align:center;animation:pop .24s ease-out}.thanks-card:before{content:"✨　🧧　✨";position:absolute;top:13px;left:0;right:0;color:var(--red2);font-size:20px;animation:bob 3s ease-in-out infinite}.thanks-icon{display:grid;place-items:center;width:74px;height:74px;margin:18px auto 13px;border-radius:24px;background:linear-gradient(145deg,#fff0c9,#ffe1a2);font-size:40px}.thanks-label{margin:0 0 8px;color:var(--red2);font-size:12px;font-weight:850;letter-spacing:.14em;text-transform:uppercase}.thanks-card h2{margin:0 0 11px;color:var(--red);font-size:clamp(27px,6vw,36px);line-height:1.15}.thanks-text{margin:0 0 14px;color:#72544a}.greeting{margin:0;padding:13px;border-radius:15px;background:#fff1d7;color:#8e241d;font-weight:750}.thanks-error{color:#b42318}.sr-status{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    @media(max-width:650px){.hero{background-attachment:scroll;background-position:center}.welcome{padding:25px 18px;border-radius:24px}.logo{width:min(270px,84%)}.float{width:42px;height:42px;border-radius:15px;font-size:21px}.f1{top:2%;left:3%}.f2{top:6%;right:3%}.f3{bottom:2%;left:4%}.f4{bottom:4%;right:3%}.dates{gap:8px}.date{padding:13px 5px}.date strong{font-size:25px}.registration{background-attachment:scroll;padding:24px 13px 55px}.bar{align-items:flex-start}.brand img{width:46px;height:40px}.panel-head{padding:22px 18px}.panel-head h2{font-size:23px}form{padding:21px 18px 23px}.grid{grid-template-columns:1fr;gap:15px}.field.full{grid-column:auto}.actions{flex-direction:column-reverse}.btn{width:100%}.thanks-card{padding:35px 20px 22px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+      .hero-video{position:absolute;z-index:-2;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 58%;filter:saturate(.92) brightness(.86)}.hero:before{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(130deg,#fff3d8bd 4%,#fff6e58c 48%,#fff0dbab)}
+    .music-toggle{position:fixed;z-index:20;right:16px;bottom:16px;display:flex;align-items:center;gap:8px;border:1px solid #efcf77;border-radius:99px;padding:10px 15px;background:#fffaf0ed;color:var(--red);font-weight:800;box-shadow:0 8px 24px #35100e25}.music-toggle[aria-pressed="true"]{background:#8e241d;color:#fff3ce}.music-note{display:inline-block}.music-toggle[aria-pressed="true"] .music-note{animation:note 1s ease-in-out infinite}@keyframes note{50%{transform:translateY(-4px) rotate(12deg)}}
+    .tet-gallery{padding:58px 18px 66px;background:linear-gradient(180deg,#fff8e9,#fff0d7)}.gallery-wrap{width:min(1040px,100%);margin:auto}.gallery-title{text-align:center;color:var(--red);font-size:clamp(26px,5vw,38px);margin:0 0 8px}.gallery-intro{text-align:center;color:var(--muted);margin:0 auto 25px;max-width:650px}.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.gallery-card{overflow:hidden;border:1px solid #ead8b5;border-radius:20px;background:#fffdf8;box-shadow:0 12px 28px #5b271514;transition:transform .2s}.gallery-card:hover{transform:translateY(-4px)}.gallery-card img{display:block;width:100%;height:210px;object-fit:cover}.gallery-card div{padding:15px 17px}.gallery-card h3{margin:0 0 4px;color:var(--red);font-size:17px}.gallery-card p{margin:0;color:var(--muted);font-size:13px}.photo-credit{margin:18px 0 0;text-align:center;color:#876d5d;font-size:11px}.photo-credit a{color:inherit}
+    @media(max-width:650px){.hero-video{display:none}.gallery-grid{grid-template-columns:1fr}.gallery-card img{height:220px}.music-toggle{right:11px;bottom:11px}}
+    @media(prefers-reduced-motion:reduce){.hero-video{display:none}}</style>
 </head>
 <body>
+  <button class="music-toggle" id="music-toggle" type="button" aria-pressed="false" aria-label="Bật nhạc xuân nhẹ"><span class="music-note" aria-hidden="true">♫</span><span id="music-label">Bật nhạc xuân</span></button>
   <section class="hero" id="welcome" aria-labelledby="welcome-title">
-    <span class="float-icon float-one" aria-hidden="true">🌼</span><span class="float-icon float-two" aria-hidden="true">🏍️</span><span class="float-icon float-three" aria-hidden="true">🧧</span><span class="float-icon float-four" aria-hidden="true">✨</span>
+    <video class="hero-video" autoplay muted loop playsinline preload="none" poster="doan-xe-tet.png" aria-hidden="true"><source src="https://videos.pexels.com/video-files/15773410/15773410-uhd_3840_2160_30fps.mp4" type="video/mp4"></video>
+    <span class="float f1" aria-hidden="true">🌼</span><span class="float f2" aria-hidden="true">🏍️</span><span class="float f3" aria-hidden="true">🧧</span><span class="float f4" aria-hidden="true">✨</span>
     <div class="welcome">
-      <img class="main-logo" src="logo-group-81-gia-lai.png" alt="Logo Group đi xe máy về 81 Gia Lai">
-      <p class="eyebrow">Xuân đoàn viên · 81 Gia Lai</p>
+      <img class="logo" src="logo-group-81-gia-lai.png" alt="Logo Group đi xe máy về 81 Gia Lai">
+      <p class="ribbon">🌸 Xuân đoàn viên · 81 Gia Lai 🌸</p>
       <h1 id="welcome-title">Tết này mình về nhà nhé!</h1>
-      <p class="intro">Chào bạn đến với trang đăng ký cùng group đi xe máy về 81 Gia Lai. Cùng nhau lên đường, trở về bên gia đình và đón một mùa Tết đoàn viên ấm áp. Bạn dự định về ngày nào?</p>
-      <p class="date-title">Chọn ngày khởi hành</p>
+      <p class="intro">Chào bạn đến với trang đăng ký cùng Group đi xe máy về 81 Gia Lai. Cùng nhau lên đường, trở về bên gia đình và đón một mùa Tết đoàn viên ấm áp. Bạn dự định về ngày nào?</p>
+      <p class="date-label">Chọn ngày khởi hành</p>
       <div class="dates" role="group" aria-label="Chọn ngày khởi hành">
-        <button class="date" data-date="26"><strong>26</strong><span>Ngày 26</span></button>
-        <button class="date" data-date="27"><strong>27</strong><span>Ngày 27</span></button>
-        <button class="date" data-date="28"><strong>28</strong><span>Ngày 28</span></button>
+        <button class="date" type="button" data-date="26"><strong>26</strong><span>Ngày 26</span></button>
+        <button class="date" type="button" data-date="27"><strong>27</strong><span>Ngày 27</span></button>
+        <button class="date" type="button" data-date="28"><strong>28</strong><span>Ngày 28</span></button>
       </div>
-      <p class="hint" style="margin-top:14px">Chọn ngày để mở mẫu đăng ký thành viên.</p>
+      <p class="small-note">Chọn ngày để tiếp tục điền thông tin thành viên.</p>
     </div>
   </section>
 
-  <main class="main" id="registration">
+  <main class="registration" id="registration">
     <div class="wrap">
-      <div class="topbar"><div class="brand"><img class="brand-logo" src="logo-group-81-gia-lai.png" alt=""><span>Đi xe máy về 81 Gia Lai</span></div><button class="back" type="button" id="change-date">← Đổi ngày</button></div>
-      <section class="panel">
-        <div class="panel-head"><p class="eyebrow">Thông tin thành viên</p><h2>Đăng ký tham gia</h2><p>Ngày khởi hành bạn chọn: <span class="badge" id="chosen-date">Ngày 26</span><span class="hint" style="display:block;margin-top:10px">Sau khi gửi, thông tin sẽ được lưu trực tiếp vào danh sách của ban tổ chức.</span></p></div>
+      <div class="bar"><div class="brand"><img src="logo-group-81-gia-lai.png" alt=""><span>Đi xe máy về 81 Gia Lai</span></div><button class="change-day" id="change-day" type="button">← Đổi ngày</button></div>
+      <section class="panel" aria-labelledby="form-title">
+        <header class="panel-head"><p class="ribbon">Thông tin thành viên</p><h2 id="form-title">Đăng ký tham gia</h2><p>Ngày khởi hành đã chọn: <span class="date-pill" id="chosen-day">Ngày 26</span></p></header>
         <form id="signup-form">
           <div class="grid">
-            <div class="field"><label for="name">Họ và tên <span class="req">*</span></label><input class="control" id="name" name="name" autocomplete="name" required placeholder="Ví dụ: Nguyễn Văn An"></div>
-            <div class="field"><label for="phone">Số điện thoại <span class="req">*</span></label><input class="control" id="phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" required placeholder="09xx xxx xxx"></div>
-            <div class="field"><label for="zalo">Tên Zalo</label><input class="control" id="zalo" name="zalo" placeholder="Tên bạn dùng trên Zalo"></div>
-            <div class="field"><label for="plate">Biển số xe</label><input class="control" id="plate" name="plate" placeholder="Ví dụ: 81-B1 123.45"></div>
-            <div class="field"><span class="legend">Bạn đã tham gia cùng đoàn chưa?</span><div class="radio-row"><label class="choice"><input type="radio" name="returning" value="Rồi" required> Rồi</label><label class="choice"><input type="radio" name="returning" value="Chưa"> Chưa</label></div></div>
-            <div class="field"><span class="legend">Bạn có bằng lái xe chưa?</span><div class="radio-row"><label class="choice"><input type="radio" name="license" value="Có" required> Có</label><label class="choice"><input type="radio" name="license" value="Chưa"> Chưa</label></div></div>
+            <div class="field"><label for="name">Họ và tên <span class="required">*</span></label><input class="control" id="name" name="name" autocomplete="name" required placeholder="Ví dụ: Nguyễn Văn An"></div>
+            <div class="field"><label for="phone">Số điện thoại <span class="required">*</span></label><input class="control" id="phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" required placeholder="09xx xxx xxx"></div>
+            <div class="field"><label for="zalo">Tên Zalo</label><input class="control" id="zalo" name="zalo" autocomplete="off" placeholder="Tên bạn dùng trên Zalo"></div>
+            <div class="field"><label for="plate">Biển số xe</label><input class="control" id="plate" name="plate" autocomplete="off" placeholder="Ví dụ: 81-B1 123.45"></div>
+            <fieldset class="field" style="border:0;padding:0;margin:0"><legend class="legend">Bạn đã tham gia cùng đoàn chưa? <span class="required">*</span></legend><div class="choices"><label class="choice"><input type="radio" name="returning" value="Rồi" required> Rồi</label><label class="choice"><input type="radio" name="returning" value="Chưa"> Chưa</label></div></fieldset>
+            <fieldset class="field" style="border:0;padding:0;margin:0"><legend class="legend">Bạn có bằng lái xe chưa? <span class="required">*</span></legend><div class="choices"><label class="choice"><input type="radio" name="license" value="Có" required> Có</label><label class="choice"><input type="radio" name="license" value="Chưa"> Chưa</label></div></fieldset>
             <div class="field"><label for="ride">Bạn đi một mình hay đi cùng ai?</label><select class="control" id="ride" name="ride"><option value="">Chọn một phương án</option><option>Đi một mình</option><option>Đi cùng người khác</option></select></div>
             <div class="field"><label for="companion">Nếu đi cùng, bạn đi cùng ai?</label><input class="control" id="companion" name="companion" placeholder="Tên người đi cùng hoặc số lượng"></div>
-            <div class="field"><span class="legend">Bạn có muốn mua cờ chân gương không?</span><div class="radio-row"><label class="choice"><input type="radio" name="flag" value="Có" required> Có</label><label class="choice"><input type="radio" name="flag" value="Không"> Không</label></div></div>
+            <fieldset class="field" style="border:0;padding:0;margin:0"><legend class="legend">Bạn có muốn mua cờ chân gương không? <span class="required">*</span></legend><div class="choices"><label class="choice"><input type="radio" name="flag" value="Có" required> Có</label><label class="choice"><input type="radio" name="flag" value="Không"> Không</label></div></fieldset>
             <div class="field full"><label for="notes">Ghi chú thêm</label><textarea class="control" id="notes" name="notes" placeholder="Thông tin bạn muốn ban tổ chức biết thêm..."></textarea></div>
           </div>
-          <div class="actions"><button class="secondary" type="reset">Xóa nội dung</button><button class="primary" type="submit">Tiếp tục xác nhận</button></div>
+          <div class="actions"><button class="btn btn-clear" type="reset">Xóa nội dung</button><button class="btn btn-submit" id="submit-button" type="submit">Tiếp tục xác nhận</button></div>
+          <p class="help">Sau khi gửi thành công, trang sẽ hiện lời chúc xác nhận cho bạn.</p>
         </form>
       </section>
     </div>
   </main>
-  <div class="thanks-dialog" id="thanks-dialog" role="dialog" aria-modal="true" aria-labelledby="thanks-title" hidden><div class="thanks-content"><span class="thanks-icon" aria-hidden="true">🏮</span><p class="eyebrow" id="thanks-label">Đang gửi đăng ký...</p><h2 id="thanks-title">Chúc mừng <span id="thanks-name">bạn</span> đã đăng ký thành công!</h2><p id="thanks-status">Cảm ơn bạn đã gửi đăng ký! Hệ thống đang ghi nhận thông tin. Hẹn gặp bạn vào ngày đoàn khởi hành nhé!</p><p class="thanks-greeting">Chúc bạn và gia đình một năm mới bình an, vạn dặm bình an và Tết đoàn viên ấm áp! 🧧</p></div></div>
-<div class="toast" id="toast" role="status" aria-live="polite">Đã ghi nhận đăng ký trên thiết bị này.</div>
-  <script>
-    const STORAGE_KEY='gia-lai-rider-signups-v1',DEVICE_KEY='gia-lai-device-registered-v1',DEVICE_NAME_KEY='gia-lai-device-registered-name-v1',DEVICE_BLOCK_ENABLED=false;let departureDay='26';
-    const welcome=document.getElementById('welcome'),registration=document.getElementById('registration');
-    const escapeHtml=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-    function readMembers(){try{return JSON.parse(localStorage.getItem(STORAGE_KEY)||'[]')}catch{return []}}
-    function showForm(day){departureDay=day;document.getElementById('chosen-date').textContent='Ngày '+day;welcome.style.display='none';registration.classList.add('visible');window.scrollTo({top:0,behavior:'smooth'})}
-    document.querySelectorAll('.date').forEach(btn=>btn.addEventListener('click',()=>showForm(btn.dataset.date)));
-    document.getElementById('change-date').addEventListener('click',()=>{registration.classList.remove('visible');welcome.style.display='grid';window.scrollTo({top:0,behavior:'smooth'})});
-    const WEB_APP_URL='https://script.google.com/macros/s/AKfycbwN9Iweed7H9FNWPuPNFhe4ywTfypvg_fIO_53UDRGKXLAsPpqVwOo4JIYd-MOtZmgtzw/exec';
-const DEVICE_ID_KEY='gia-lai-registration-device-id-v1';
-function getDeviceId(){let id=localStorage.getItem(DEVICE_ID_KEY);if(!id){id=(crypto.randomUUID?crypto.randomUUID():Date.now()+'-'+Math.random().toString(36).slice(2));localStorage.setItem(DEVICE_ID_KEY,id)}return id}const thanksDialog=document.getElementById('thanks-dialog');function showThanks(name){document.getElementById('thanks-name').textContent=name||'bạn';thanksDialog.hidden=false;thanksDialog.classList.add('open')}function hideThanks(){thanksDialog.hidden=true;thanksDialog.classList.remove('open')}function showSavedRegistration(){if(!DEVICE_BLOCK_ENABLED)return;const saved=localStorage.getItem(DEVICE_KEY);if(!saved)return;welcome.style.display='none';registration.classList.remove('visible');const savedName=localStorage.getItem(DEVICE_NAME_KEY)||'bạn',isPending=saved==='pending';document.getElementById('thanks-title').textContent=isPending?'Đang xác nhận đăng ký':'Chúc mừng '+savedName+' đã đăng ký thành công!';document.getElementById('thanks-label').textContent=isPending?'Đang kiểm tra trạng thái':'Đăng ký thành công';document.getElementById('thanks-status').textContent=isPending?'Đăng ký trên thiết bị này đang được kiểm tra. Vui lòng liên hệ ban tổ chức nếu cần xác nhận.':'Thông tin của bạn đã được ghi nhận thành công. Hẹn gặp bạn vào ngày đoàn khởi hành nhé!';showThanks(savedName)}showSavedRegistration();
 
-document.getElementById('signup-form').addEventListener('submit',event=>{event.preventDefault();if(DEVICE_BLOCK_ENABLED&&localStorage.getItem(DEVICE_KEY)){showSavedRegistration();alert('Thiết bị này đã đăng ký rồi. Vui lòng liên hệ admin nếu cần chỉnh sửa.');return}const form=new FormData(event.currentTarget);const record={day:departureDay,name:form.get('name').trim(),phone:form.get('phone').trim(),zalo:form.get('zalo').trim(),plate:form.get('plate').trim(),returning:form.get('returning'),license:form.get('license'),ride:form.get('ride'),companion:form.get('companion').trim(),flag:form.get('flag'),notes:form.get('notes').trim(),deviceId:DEVICE_BLOCK_ENABLED?getDeviceId():(crypto.randomUUID?crypto.randomUUID():Date.now()+'-'+Math.random().toString(36).slice(2))};const submitButton=event.currentTarget.querySelector('[type="submit"]');if(submitButton.disabled)return;submitButton.disabled=true;const frame=document.createElement('iframe');frame.name='gia-lai-registration-response';frame.title='Kết quả gửi đăng ký';frame.style.display='none';let frameSubmitted=false,resolveFrameReady;const frameReady=new Promise(resolve=>{resolveFrameReady=resolve});frame.addEventListener('load',()=>resolveFrameReady(),{once:true});frame.addEventListener('load',()=>{if(frameSubmitted)finish(true,'')});document.body.appendChild(frame);const sendForm=document.createElement('form');sendForm.method='POST';sendForm.action=WEB_APP_URL;sendForm.target=frame.name;Object.entries(record).forEach(([key,value])=>{const input=document.createElement('input');input.type='hidden';input.name=key;input.value=value||'';sendForm.appendChild(input)});document.body.appendChild(sendForm);let finished=false;const finish=(ok,message,uncertain=false)=>{if(finished)return;finished=true;window.removeEventListener('message',onMessage);sendForm.remove();frame.remove();if(ok){localStorage.setItem(DEVICE_KEY,'1');localStorage.setItem(DEVICE_NAME_KEY,record.name);document.getElementById('thanks-title').textContent='Chúc mừng '+record.name+' đã đăng ký thành công!';document.getElementById('thanks-label').textContent='Đăng ký thành công';document.getElementById('thanks-status').textContent='Thông tin của bạn đã được ghi nhận thành công. Hẹn gặp bạn vào ngày đoàn khởi hành nhé!';showThanks(record.name)}else if(uncertain){document.getElementById('thanks-title').textContent='Đang xác nhận đăng ký';document.getElementById('thanks-label').textContent='Đang kiểm tra trạng thái';document.getElementById('thanks-status').textContent='Hệ thống chưa phản hồi. Để tránh gửi trùng, vui lòng không đăng ký lại ngay; hãy liên hệ ban tổ chức để kiểm tra danh sách.';}else{localStorage.removeItem(DEVICE_KEY);localStorage.removeItem(DEVICE_NAME_KEY);hideThanks();submitButton.disabled=false;alert(message||'Chưa gửi được đăng ký. Vui lòng thử lại hoặc liên hệ ban tổ chức.')}};const onMessage=event=>{if(event.origin!=='https://script.google.com'&&!event.origin.endsWith('.googleusercontent.com')||event.data?.type!=='gia-lai-registration')return;finish(event.data.ok,event.data.message)};window.addEventListener('message',onMessage);localStorage.setItem(DEVICE_NAME_KEY,record.name);localStorage.setItem(DEVICE_KEY,'pending');document.getElementById('thanks-title').textContent='Đang xác nhận đăng ký';document.getElementById('thanks-label').textContent='Đang gửi đăng ký...';document.getElementById('thanks-status').textContent='Cảm ơn bạn đã gửi đăng ký! Hệ thống đang ghi nhận thông tin. Hẹn gặp bạn vào ngày đoàn khởi hành nhé!';showThanks(record.name);frameReady.then(()=>{if(finished)return;frameSubmitted=true;sendForm.submit()});setTimeout(()=>finish(false,'',true),20000)});
+  <section class="tet-gallery" aria-labelledby="gallery-title"><div class="gallery-wrap"><h2 class="gallery-title" id="gallery-title">Một chút hương Tết quê nhà</h2><p class="gallery-intro">Từ sắc hoa ngày xuân đến khoảnh khắc quây quần bên gia đình — mong chuyến đi của chúng ta mở đầu một mùa đoàn viên thật ấm áp.</p><div class="gallery-grid">
+    <article class="gallery-card"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Ch%E1%BB%A3_hoa_t%E1%BA%BFt.jpg/960px-Ch%E1%BB%A3_hoa_t%E1%BA%BFt.jpg" alt="Sắc hoa rực rỡ tại chợ hoa ngày Tết"><div><h3>Rực rỡ chợ hoa xuân</h3><p>Đào, mai và sắc màu báo hiệu mùa Tết đã về.</p></div></article>
+    <article class="gallery-card"><img loading="lazy" src="doan-xe-tet.png" alt="Đoàn xe máy cùng nhau lên đường về Gia Lai"><div><h3>Cùng nhau du xuân</h3><p>Một hành trình vui vẻ, an toàn và đầy kỷ niệm.</p></div></article>
+    <article class="gallery-card"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Tet_holiday_in_Vietnam.jpg/960px-Tet_holiday_in_Vietnam.jpg" alt="Gia đình quây quần chuẩn bị món bánh Tết truyền thống"><div><h3>Tết cổ truyền đoàn viên</h3><p>Điều quý nhất là được trở về bên những người thân yêu.</p></div></article>
+  </div><p class="photo-credit">Ảnh chợ hoa: <a href="https://commons.wikimedia.org/wiki/File:Ch%E1%BB%A3_hoa_t%E1%BA%BFt.jpg" target="_blank" rel="noopener">Nguyen Dung Tien / Wikimedia Commons (CC BY-SA 2.0)</a> · Ảnh Tết cổ truyền: <a href="https://commons.wikimedia.org/wiki/File:Tet_holiday_in_Vietnam.jpg" target="_blank" rel="noopener">This is Thảo / Wikimedia Commons (CC BY-SA 4.0)</a> · Video: Pexels</p></div></section>  <section class="thanks" id="thanks" role="dialog" aria-modal="true" aria-labelledby="thanks-title" aria-describedby="thanks-text" hidden>
+    <div class="thanks-card"><span class="thanks-icon" aria-hidden="true">🏮</span><p class="thanks-label" id="thanks-label">Đang gửi đăng ký...</p><h2 id="thanks-title">Chúc mừng <span id="thanks-name">bạn</span> đã đăng ký thành công!</h2><p class="thanks-text" id="thanks-text">Cảm ơn bạn đã đăng ký. Hẹn gặp bạn vào ngày đoàn khởi hành nhé!</p><p class="greeting">Chúc bạn và gia đình năm mới bình an, vạn dặm bình an và Tết đoàn viên ấm áp! 🧧</p></div>
+  </section>
+  <p class="sr-status" id="live-status" role="status" aria-live="polite"></p>
+
+  <script>
+    const WEB_APP_URL='https://script.google.com/macros/s/AKfycbwN9Iweed7H9FNWPuPNFhe4ywTfypvg_fIO_53UDRGKXLAsPpqVwOo4JIYd-MOtZmgtzw/exec';
+    const DEVICE_BLOCK_ENABLED=false;
+    let departureDay='26';
+    const welcome=document.getElementById('welcome');
+    const registration=document.getElementById('registration');
+    const form=document.getElementById('signup-form');
+    const thanks=document.getElementById('thanks');
+    const submitButton=document.getElementById('submit-button');
+    let musicContext=null,musicTimer=null,musicStep=0;
+    const musicNotes=[523.25,659.25,783.99,659.25,587.33,698.46,783.99,698.46];
+    function playMusicNote(){if(!musicContext)return;const osc=musicContext.createOscillator(),gain=musicContext.createGain();osc.type='sine';osc.frequency.value=musicNotes[musicStep++%musicNotes.length];gain.gain.setValueAtTime(.0001,musicContext.currentTime);gain.gain.exponentialRampToValueAtTime(.025,musicContext.currentTime+.04);gain.gain.exponentialRampToValueAtTime(.0001,musicContext.currentTime+.62);osc.connect(gain);gain.connect(musicContext.destination);osc.start();osc.stop(musicContext.currentTime+.65)}
+    document.getElementById('music-toggle').addEventListener('click',async event=>{const button=event.currentTarget;const enabled=button.getAttribute('aria-pressed')==='true';if(enabled){clearInterval(musicTimer);musicTimer=null;if(musicContext)await musicContext.suspend();button.setAttribute('aria-pressed','false');button.setAttribute('aria-label','Bật nhạc xuân nhẹ');document.getElementById('music-label').textContent='Bật nhạc xuân';return}try{musicContext=musicContext||new(window.AudioContext||window.webkitAudioContext)();await musicContext.resume();playMusicNote();musicTimer=setInterval(playMusicNote,720);button.setAttribute('aria-pressed','true');button.setAttribute('aria-label','Tắt nhạc xuân nhẹ');document.getElementById('music-label').textContent='Tắt nhạc xuân'}catch(error){document.getElementById('music-label').textContent='Không phát được nhạc'} });
+    const getValue=(data,key)=>String(data.get(key)||'').trim();
+    const makeSubmissionId=()=>crypto.randomUUID?crypto.randomUUID():Date.now()+'-'+Math.random().toString(36).slice(2);
+
+    function openForm(day){
+      if(DEVICE_BLOCK_ENABLED&&localStorage.getItem('gia-lai-device-registered-v1'))return;
+      departureDay=day;
+      document.getElementById('chosen-day').textContent='Ngày '+day;
+      welcome.hidden=true;
+      registration.classList.add('visible');
+      window.scrollTo({top:0,behavior:'smooth'});
+      document.getElementById('name').focus({preventScroll:true});
+    }
+    function showThanks(name,status='Đang gửi đăng ký...',message='Cảm ơn bạn đã đăng ký. Hẹn gặp bạn vào ngày đoàn khởi hành nhé!'){
+      document.getElementById('thanks-name').textContent=name||'bạn';
+      document.getElementById('thanks-label').textContent=status;
+      document.getElementById('thanks-text').textContent=message;
+      thanks.hidden=false;
+      thanks.classList.add('visible');
+    }
+    function hideThanks(){thanks.classList.remove('visible');thanks.hidden=true}
+    function validateAndRead(){
+      const data=new FormData(form);
+      return {
+        day:departureDay,
+        name:getValue(data,'name'),
+        phone:getValue(data,'phone'),
+        zalo:getValue(data,'zalo'),
+        plate:getValue(data,'plate'),
+        returning:data.get('returning')||'',
+        license:data.get('license')||'',
+        ride:data.get('ride')||'',
+        companion:getValue(data,'companion'),
+        flag:data.get('flag')||'',
+        notes:getValue(data,'notes'),
+        deviceId:makeSubmissionId()
+      };
+    }
+    document.querySelectorAll('.date').forEach(button=>button.addEventListener('click',()=>openForm(button.dataset.date)));
+    document.getElementById('change-day').addEventListener('click',()=>{
+      registration.classList.remove('visible');
+      welcome.hidden=false;
+      window.scrollTo({top:0,behavior:'smooth'});
+    });
+
+    form.addEventListener('submit',event=>{
+      event.preventDefault();
+      if(submitButton.disabled)return;
+      const record=validateAndRead();
+      submitButton.disabled=true;
+      document.getElementById('live-status').textContent='Đang gửi đăng ký';
+      showThanks(record.name,'Đang gửi đăng ký...','Thông tin của bạn đang được gửi đến ban tổ chức. Vui lòng chờ trong giây lát.');
+
+      let finished=false;
+      let submitted=false;
+      const frame=document.createElement('iframe');
+      frame.name='gia-lai-registration-response-'+makeSubmissionId();
+      frame.title='Phản hồi đăng ký';
+      frame.style.display='none';
+      const transport=document.createElement('form');
+      transport.method='POST';
+      transport.action=WEB_APP_URL;
+      transport.target=frame.name;
+      Object.entries(record).forEach(([key,value])=>{
+        const input=document.createElement('input');
+        input.type='hidden';input.name=key;input.value=value;
+        transport.appendChild(input);
+      });
+      const finish=(ok,message)=>{
+        if(finished)return;
+        finished=true;
+        window.removeEventListener('message',onMessage);
+        clearTimeout(timeout);
+        frame.remove();transport.remove();
+        if(ok){
+          if(DEVICE_BLOCK_ENABLED){localStorage.setItem('gia-lai-device-registered-v1','1');localStorage.setItem('gia-lai-device-registered-name-v1',record.name)}
+          document.getElementById('live-status').textContent='Đăng ký thành công';
+          showThanks(record.name,'Đăng ký thành công','Thông tin của bạn đã được ghi nhận. Hẹn gặp bạn vào ngày đoàn khởi hành nhé!');
+        }else{
+          document.getElementById('live-status').textContent='Chưa xác nhận được đăng ký';
+          showThanks(record.name,'Đang xác nhận đăng ký',message||'Trang chưa nhận được phản hồi xác nhận từ bảng tính. Vui lòng kiểm tra danh sách trước khi gửi lại để tránh trùng thông tin.');
+          submitButton.disabled=false;
+        }
+      };
+      const onMessage=messageEvent=>{
+        const trustedOrigin=messageEvent.origin==='https://script.google.com'||messageEvent.origin.endsWith('.googleusercontent.com');
+        if(!trustedOrigin||messageEvent.data?.type!=='gia-lai-registration')return;
+        finish(Boolean(messageEvent.data.ok),messageEvent.data.message);
+      };
+      frame.addEventListener('load',()=>{
+        if(!submitted){submitted=true;transport.submit();return}
+        finish(true,'');
+      });
+      window.addEventListener('message',onMessage);
+      const timeout=setTimeout(()=>finish(false,'Chưa nhận được phản hồi từ danh sách. Vui lòng kiểm tra với ban tổ chức trước khi gửi lại.'),25000);
+      document.body.append(frame,transport);
+    });
   </script>
 </body>
 </html>
