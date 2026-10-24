@@ -158,6 +158,8 @@
       if(submitButton.disabled)return;
       const record=validateAndRead();
       submitButton.disabled=true;
+      registration.classList.remove('visible');
+      welcome.hidden=true;
       document.getElementById('live-status').textContent='Đang gửi đăng ký';
       showThanks(record.name,'Đang gửi đăng ký...','Thông tin của bạn đang được gửi đến ban tổ chức. Vui lòng chờ trong giây lát.');
 
@@ -189,6 +191,7 @@
           document.getElementById('live-status').textContent='Đăng ký thành công';
           showThanks(record.name,'Đăng ký thành công','Thông tin của bạn đã được ghi nhận. Hẹn gặp bạn vào ngày đoàn khởi hành nhé!');
         }else{
+          registration.classList.add('visible');
           document.getElementById('live-status').textContent='Chưa xác nhận được đăng ký';
           showThanks(record.name,'Đang xác nhận đăng ký',message||'Trang chưa nhận được phản hồi xác nhận từ bảng tính. Vui lòng kiểm tra danh sách trước khi gửi lại để tránh trùng thông tin.');
           submitButton.disabled=false;
