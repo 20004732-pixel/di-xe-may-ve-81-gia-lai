@@ -7,15 +7,14 @@
   <title>Đăng ký đi xe máy về 81 Gia Lai</title>
   <style>
     :root{--red:#8e241d;--red2:#b52b24;--gold:#f3cf70;--cream:#fff8e9;--ink:#35221d;--muted:#765d52;--line:#ead8b5;--paper:#fffdf8;--shadow:0 22px 64px #43130f35}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;background:#fff8e9 url('doan-xe-tet.png') center/cover fixed;isolation:isolate}button,input,select,textarea{font:inherit}button{cursor:pointer}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;background:#40352e;isolation:isolate}button,input,select,textarea{font:inherit}button{cursor:pointer}
     .hero{position:relative;isolation:isolate;min-height:100svh;display:grid;place-items:center;overflow:hidden;padding:34px 18px;background:transparent}.hero[hidden]{display:none!important}
-    .hero-video{position:fixed;z-index:-1;inset:0;width:100vw;height:100vh;object-fit:cover;object-position:center 58%;filter:none;pointer-events:none}
+    .background-media{position:fixed;z-index:-1;inset:0;overflow:hidden;background:#40352e;pointer-events:none}.background-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 58%;opacity:0;transition:opacity 1.1s ease}.background-media .active{opacity:1}.background-media:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#1f17122b,#25171140)}
     .welcome{position:relative;width:min(830px,100%);padding:clamp(26px,5vw,54px);text-align:center;border:1px solid #e8c75e;border-radius:32px;background:#fffaf0ed;box-shadow:var(--shadow);backdrop-filter:blur(9px)}.welcome[hidden]{display:none!important}#start-registration{margin-top:4px}
     .logo{display:block;width:min(310px,82%);max-height:170px;object-fit:contain;margin:0 auto 16px;filter:drop-shadow(0 8px 10px #4b1b1822)}
     .ribbon{display:inline-flex;align-items:center;gap:8px;margin:0 auto 15px;padding:7px 15px;border-radius:99px;background:var(--red);color:#ffe38e;font-size:12px;font-weight:850;letter-spacing:.12em;text-transform:uppercase}
     h1,h2,p{margin-top:0}h1{margin-bottom:12px;color:var(--red);font-size:clamp(34px,7vw,60px);line-height:1.06;letter-spacing:-.045em;text-wrap:balance}.intro{max-width:590px;margin:0 auto 27px;color:var(--muted);font-size:17px}
     .date-label{margin:0 0 12px;color:var(--red);font-size:13px;font-weight:850;letter-spacing:.11em;text-transform:uppercase}.dates{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;max-width:620px;margin:0 auto}.date{padding:15px 9px;border:1px solid #e4c55f;border-radius:17px;background:linear-gradient(145deg,#fffefa,#fff0cf);color:var(--red);box-shadow:0 7px 18px #79231a12;transition:transform .18s,box-shadow .18s,border-color .18s}.date:hover,.date:focus-visible{transform:translateY(-3px);border-color:var(--red2);box-shadow:0 12px 24px #79231a20;outline:none}.date.selected{background:#ffe6ad;border-color:var(--red2)}.date strong{display:block;font-size:30px;line-height:1.1}.date span{display:block;margin-top:4px;color:var(--muted);font-size:12px;font-weight:700}.small-note{margin:14px 0 0;color:var(--muted);font-size:12px}
-    50%{transform:translateY(-13px) rotate(7deg)}}
     .registration{display:none;min-height:100vh;padding:35px 18px 70px;background:linear-gradient(#fff8e966,#fff8e966)}.registration.visible{display:block}.wrap{max-width:940px;margin:0 auto}.bar{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:18px}.brand{display:flex;align-items:center;gap:10px;color:var(--red);font-weight:850}.brand img{width:58px;height:48px;object-fit:contain}.change-day{border:0;border-radius:12px;padding:10px 13px;background:#fff0d5;color:var(--red);font-weight:750}
     .panel{overflow:hidden;border:1px solid #e7cb71;border-radius:25px;background:var(--paper);box-shadow:var(--shadow)}.panel-head{padding:27px 30px 22px;background:linear-gradient(105deg,#fff0d5,#fffaf0);border-bottom:1px solid #efdfbf}.panel-head h2{margin-bottom:5px;color:var(--red);font-size:26px}.panel-head p{margin:0;color:var(--muted)}.date-pill{display:inline-flex;margin-left:5px;padding:3px 10px;border-radius:99px;background:#ffeac1;color:var(--red);font-weight:850}
     form{padding:26px 30px 30px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 16px}.field.full{grid-column:1/-1}label,.legend{display:block;margin-bottom:7px;color:#4b3b31;font-size:13px;font-weight:800}.required{color:var(--red2)}.control{width:100%;min-height:46px;padding:11px 13px;border:1px solid #dfd4c3;border-radius:12px;background:#fff;color:var(--ink);outline:none;transition:border-color .15s,box-shadow .15s}.control:focus{border-color:#bb4538;box-shadow:0 0 0 3px #b52b2418}.control::placeholder{color:#a39284}textarea.control{min-height:94px;resize:vertical}.choices{display:flex;gap:9px;flex-wrap:wrap}.choice{display:inline-flex;align-items:center;gap:8px;min-height:42px;padding:9px 12px;border:1px solid var(--line);border-radius:11px;background:white;color:var(--ink);font-size:14px;font-weight:650}.choice input{width:16px;height:16px;accent-color:var(--red2)}.actions{display:flex;justify-content:flex-end;gap:10px;margin-top:24px}.btn{min-height:46px;border:0;border-radius:13px;padding:11px 18px;font-weight:850}.btn-clear{background:#fff0d5;color:var(--red)}.btn-submit{background:linear-gradient(135deg,#8e241d,#c23b2d);color:white;box-shadow:0 7px 16px #8e241d2b}.btn-submit:disabled{opacity:.65;cursor:wait}.help{margin:14px 0 0;color:var(--muted);font-size:12px}
@@ -24,10 +23,10 @@
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
     @media(max-width:650px){.hero{background-attachment:scroll}}
     .fade-out{animation:fade-out .65s ease forwards}.fade-in{animation:fade-in .75s ease both}@keyframes fade-out{to{opacity:0;transform:translateY(-8px)}}@keyframes fade-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-    @media(prefers-reduced-motion:reduce){.hero-video{display:none}.fade-out,.fade-in{animation:none}}</style>
+    @media(prefers-reduced-motion:reduce){.background-media img{transition:none}.fade-out,.fade-in{animation:none}}</style>
 </head>
 <body>
-    <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="doan-xe-tet.png" aria-hidden="true"><source src="https://cdn.pixabay.com/video/2024/09/16/231651_large.mp4" type="video/mp4"></video>
+    <div class="background-media" id="background-media" aria-hidden="true"><img class="active" id="background-image-a" src="assets/ride-route-day.webp" alt=""><img id="background-image-b" src="assets/group-gialai.webp" alt=""></div>
   <section class="hero" id="welcome" aria-labelledby="welcome-title">
     <div class="welcome" id="greeting-screen">
       <img class="logo" src="logo-group-81-gia-lai.png" alt="Logo Group đi xe máy về 81 Gia Lai">
@@ -83,6 +82,8 @@
   <script>
     const WEB_APP_URL='https://script.google.com/macros/s/AKfycbwN9Iweed7H9FNWPuPNFhe4ywTfypvg_fIO_53UDRGKXLAsPpqVwOo4JIYd-MOtZmgtzw/exec';
     const DEVICE_BLOCK_ENABLED=false;
+    const DEVICE_KEY='gia-lai-device-registered-v1';
+    const DEVICE_NAME_KEY='gia-lai-device-registered-name-v1';
     let departureDay='26';
     const welcome=document.getElementById('welcome');
     const registration=document.getElementById('registration');
@@ -102,11 +103,36 @@
     const form=document.getElementById('signup-form');
     const thanks=document.getElementById('thanks');
     const submitButton=document.getElementById('submit-button');
+    const backgroundImages=[document.getElementById('background-image-a'),document.getElementById('background-image-b')];
     const getValue=(data,key)=>String(data.get(key)||'').trim();
     const makeSubmissionId=()=>crypto.randomUUID?crypto.randomUUID():Date.now()+'-'+Math.random().toString(36).slice(2);
 
+    const backgroundScenes=[
+      'assets/ride-route-day.webp',
+      'assets/group-gialai.webp',
+      'assets/ride-meetup-night.webp',
+      'assets/ride-country-road.webp',
+      'assets/ride-gas-stop.webp'
+    ];
+    let sceneIndex=0;
+    let activeBackgroundImage=0;
+    function showScene(index){
+      sceneIndex=index%backgroundScenes.length;
+      if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+      const nextImage=1-activeBackgroundImage;
+      const image=backgroundImages[nextImage];
+      image.onload=()=>{
+        image.classList.add('active');
+        backgroundImages[activeBackgroundImage].classList.remove('active');
+        activeBackgroundImage=nextImage;
+      };
+      image.src=backgroundScenes[sceneIndex];
+      image.onerror=()=>image.classList.remove('active');
+    }
+    if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches)setInterval(()=>showScene(sceneIndex+1),6500);
+
     function openForm(day){
-      if(DEVICE_BLOCK_ENABLED&&localStorage.getItem('gia-lai-device-registered-v1'))return;
+      if(DEVICE_BLOCK_ENABLED&&localStorage.getItem(DEVICE_KEY)==='1'){showSavedRegistration();return}
       departureDay=day;
       document.getElementById('chosen-day').textContent='Ngày '+day;
       welcome.hidden=true;
@@ -126,6 +152,13 @@
       thanks.classList.add('visible');
     }
     function hideThanks(){thanks.classList.remove('visible');thanks.hidden=true}
+    function showSavedRegistration(){
+      const savedName=localStorage.getItem(DEVICE_NAME_KEY)||'bạn';
+      welcome.hidden=true;
+      registration.classList.remove('visible');
+      showThanks(savedName,'Đăng ký thành công','Thiết bị này đã ghi nhận đăng ký. Nếu bạn cần chỉnh sửa thông tin, vui lòng liên hệ ban tổ chức.');
+    }
+    if(DEVICE_BLOCK_ENABLED&&localStorage.getItem(DEVICE_KEY)==='1')showSavedRegistration();
     function validateAndRead(){
       const data=new FormData(form);
       return {
@@ -213,4 +246,5 @@
   </script>
 </body>
 </html>
+
 
